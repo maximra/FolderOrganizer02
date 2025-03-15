@@ -124,18 +124,6 @@ namespace File_Organizer__Command_Line_Tool___5
             if (isValidFolderPath())     // Check whether or not it is even relevant 
             {
                 FixFolderPath();          // Fix minor mistakes **before** checking existence
-                if(!Directory.Exists(address))
-                {
-                    try
-                    {
-                        Directory.CreateDirectory(address);
-                        Console.WriteLine($"Created destination directory: {address}");
-                    }
-                    catch (Exception e)     // In case the user gives a junk input
-                    {
-                        Console.WriteLine($"Error: {e.Message}");
-                    }
-                }
                 if (isFolderExisting())
                 {
                     is_valid_address = true;
@@ -164,6 +152,18 @@ namespace File_Organizer__Command_Line_Tool___5
             if (isValidFolderPath())     // Check whether or not it is even relevant 
             {
                 FixFolderPath();          // Fix minor mistakes **before** checking existence
+                if (!Directory.Exists(address))
+                {
+                    try
+                    {
+                        Directory.CreateDirectory(address);
+                        Console.WriteLine($"Created destination directory: {address}");
+                    }
+                    catch (Exception e)     // In case the user gives a junk input
+                    {
+                        Console.WriteLine($"Error: {e.Message}");
+                    }
+                }
                 if (isFolderExisting())
                 {
                     is_valid_address = true;
