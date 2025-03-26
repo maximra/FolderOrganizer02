@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace File_Organizer__Command_Line_Tool___5
+namespace FileOrganizerSoftware
 {
     class FileOperationsHandling
     {

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Transactions;
 
-namespace File_Organizer__Command_Line_Tool___5
+namespace FileOrganizerSoftware
 {
     class EventHandler
     {

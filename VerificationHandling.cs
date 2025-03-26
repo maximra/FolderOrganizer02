@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace File_Organizer__Command_Line_Tool___5
+namespace FileOrganizerSoftware
 {
     abstract class VerificationHandling       // Our abstract base for handling verifications 
     {
@@ -158,12 +158,7 @@ namespace File_Organizer__Command_Line_Tool___5
                     try
                     {
                         Directory.CreateDirectory(Address);
-                        Log.Logger = new LoggerConfiguration()
-                        .WriteTo.Console() // Also log to console
-                        .WriteTo.File("logs/userOperations_.txt", rollingInterval: RollingInterval.Day)
-                        .CreateLogger();
-                        Log.Information($"Created destination directory: {Address}");
-                        Log.CloseAndFlush();
+                        AppLogger.Instance.Information("Created destination directory {directory}", Address);
                     }
                     catch (Exception e)     // In case the user gives a junk input
                     {
