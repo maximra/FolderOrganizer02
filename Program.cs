@@ -23,7 +23,7 @@ public class FileOrganizerApp
 
 
 
-        FileOrganizerSoftware.EventHandler softwareTester = new FileOrganizerSoftware.EventHandler("unvalid$$$", "unvalid$$$");  
+        FileOrganizerSoftware.MenuController softwareTester = new FileOrganizerSoftware.MenuController("unvalid$$$", "unvalid$$$");  
         softwareTester.StartSequence();
         softwareTester.ModeSelection();
         softwareTester.InsertSourceDirectory();
