@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FileOrganizerSoftware
 {
-    public sealed class AppLogger
+    public class AppLogger
     {
         private static readonly Lazy<AppLogger> _instance = new(() => new AppLogger());
         public static AppLogger Instance => _instance.Value;

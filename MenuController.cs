@@ -7,7 +7,7 @@ using System.Transactions;
 
 namespace FileOrganizerSoftware
 {
-    class MenuController
+    public class MenuController
     {
         FileOperationsHandler _myHandler;
         public bool ModeKey { get; set; }

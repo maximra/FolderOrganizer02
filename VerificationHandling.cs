@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FileOrganizerSoftware
 {
-    abstract class VerificationHandling       // Our abstract base for handling verifications 
+    abstract public class VerificationHandling       // Our abstract base for handling verifications 
     {
         public string Address { get; set; }
         public bool AddressStatus { get; set; }
@@ -111,7 +111,7 @@ namespace FileOrganizerSoftware
         }
     }
 
-    class VerificationHandlingSourceFolder: VerificationHandling
+    public class VerificationHandlingSourceFolder: VerificationHandling
     {
         public VerificationHandlingSourceFolder(string address) : base(address)
         {
@@ -140,7 +140,7 @@ namespace FileOrganizerSoftware
             }
         }
     }
-    class VerificationHandlingDestinationFolder: VerificationHandling
+    public class VerificationHandlingDestinationFolder: VerificationHandling
     {
         public VerificationHandlingDestinationFolder(string address) : base(address)
         {
