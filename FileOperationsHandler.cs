@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace FileOrganizerSoftware
 {
-    class FileOperationsHandler
+    public class FileOperationsHandler
     {
          VerificationHandlingDestinationFolder _destinationFolder;
          VerificationHandlingSourceFolder _sourceFolder;
@@ -69,32 +70,47 @@ namespace FileOrganizerSoftware
         {
             _destinationFolder.Address = newDestinationAddress;
         }
-        public void PerformCopyOperation(bool key)
+        public bool PerformCopyOperation(bool key)
         {
             if(_sourceFolder.AddressStatus && _destinationFolder.AddressStatus)
             {
                 if (_sourceFolder.Address != _destinationFolder.Address)
+                {
                     CopyDirectory(_sourceFolder.Address, _destinationFolder.Address, key);
+                    return true;
+                }
                 else
+                {
                     Console.WriteLine("Self copy is not allowed");
+                    return false;
+                }
+
             }
             else
             {
                 Console.WriteLine("Copy operation failed, source or destination are invalid...");
+                return false;
             }
         }
-        public void PerformOrganizedCopyOperation(bool key)
+        public bool PerformOrganizedCopyOperation(bool key)
         {
             if (_sourceFolder.AddressStatus && _destinationFolder.AddressStatus )
             {
                 if (_sourceFolder.Address != _destinationFolder.Address)
+                {
                     OrganizedCopyDirectory(_sourceFolder.Address, _destinationFolder.Address, key);
+                    return true;
+                }
                 else
+                {
                     Console.WriteLine("Self copy is not allowed");
+                    return false;
+                }
             }
             else
             {
                 Console.WriteLine("Copy operation failed, source or destination are invalid...");
+                return false;
             }
         }
         protected virtual void CopyDirectory(string mySourceFolder, string myDestinationFolder, bool key)
